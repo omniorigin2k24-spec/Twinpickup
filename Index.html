@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Shot Disposal - Quote Request & Inquiry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+    <div class="max-w-4xl mx-auto px-4 py-12">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold tracking-tight text-amber-500 uppercase">Hot Shot Disposal Logistics</h1>
+            <p class="text-gray-400 mt-2">Fast, reliable hauling and specialized dumping solutions.</p>
+        </header>
+
+        <div class="bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-700">
+            <h2 class="text-2xl font-bold mb-6 text-white border-b border-gray-700 pb-2">Request a Quote / Submit Inquiry</h2>
+            
+            <form action="process.php" method="POST" class="space-y-6">
+                <!-- Contact Details -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300">Name / Company</label>
+                        <input type="text" name="name" required class="w-full mt-1 p-3 bg-gray-700 rounded border border-gray-600 focus:border-amber-500 focus:outline-none text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300">Email Address</label>
+                        <input type="email" name="email" required class="w-full mt-1 p-3 bg-gray-700 rounded border border-gray-600 focus:border-amber-500 focus:outline-none text-white">
+                    </div>
+                </div>
+
+                <!-- Logistics Info -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300">Pickup Location (City/Zip)</label>
+                        <input type="text" name="pickup" required class="w-full mt-1 p-3 bg-gray-700 rounded border border-gray-600 focus:border-amber-500 focus:outline-none text-white" placeholder="Where is the load?">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300">Drop-off / Disposal Site</label>
+                        <input type="text" name="dropoff" required class="w-full mt-1 p-3 bg-gray-700 rounded border border-gray-600 focus:border-amber-500 focus:outline-none text-white" placeholder="Destination">
+                    </div>
+                </div>
+
+                <!-- Load Description -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-300">Load Description & Estimated Weight</label>
+                    <textarea name="load_details" rows="4" required class="w-full mt-1 p-3 bg-gray-700 rounded border border-gray-600 focus:border-amber-500 focus:outline-none text-white" placeholder="Describe the materials, dimension, or bin size needed..."></textarea>
+                </div>
+
+                <!-- Request Type -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-300">Request Type</label>
+                    <select name="request_type" class="w-full mt-1 p-3 bg-gray-700 rounded border border-gray-600 focus:border-amber-500 focus:outline-none text-white">
+                        <option value="quote">I need a pricing quote</option>
+                        <option value="general_inquiry">General business inquiry</option>
+                        <option value="immediate_dispatch">Immediate Hot Shot Dispatch</option>
+                    </select>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold uppercase py-4 rounded transition duration-200 tracking-wider">
+                    Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
